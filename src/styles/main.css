@@ -1,0 +1,770 @@
+/* General */
+body {
+  margin: 0;
+  background-color: #0B1B2A;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #E1E3E6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Layout */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #0F2A44;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.nav-link {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: #cfd8dc;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #173D5C;
+  color: #a0c4ff;
+}
+
+/* Main Area */
+.main {
+  flex: 1;
+  padding: 40px 48px;
+  overflow-y: auto;
+  background-color: #0B1B2A;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #A6ACB8;
+}
+
+/* Cards Row */
+.cards-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #102A44;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  min-width: 240px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.icon {
+  font-size: 28px;
+  color: #4A90E2;
+}
+
+.label {
+  font-size: 14px;
+  color: #a0aec0;
+  margin: 0;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #f0f4f8;
+}
+
+/* Bottom Row */
+.bottom-row {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.actions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.action {
+  background: #102A44;
+  padding: 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  transition: background 0.3s ease;
+}
+
+.action:hover {
+  background: #173D5C;
+}
+
+.notifications {
+  flex: 1;
+  background: #102A44;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.5);
+}
+
+.notifications h3 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #8fa1b3;
+}
+
+.notif {
+  background: #173D5C;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #cbd6e2;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.05);
+  transition: background 0.3s ease;
+}
+
+.notif:hover {
+  background: #1f4f85;
+}
+
+.notif span {
+  display: block;
+  color: #a0aec0;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* Container and page content for Ships & Jobs Pages */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  background: #1F2733;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #E1E3E6;
+}
+
+/* Page content flex layout */
+.page-content {
+  display: flex;
+  gap: 36px;
+  flex-wrap: nowrap;
+}
+
+/* Side panel for forms */
+.side-panel {
+  flex: 0 0 360px;
+  background: #27354A;
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: inset 0 0 15px rgba(74,144,226,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  user-select: none;
+}
+
+.side-panel h3 {
+  font-weight: 700;
+  font-size: 22px;
+  color: #4A90E2;
+  border-bottom: 2px solid #4A90E2;
+  padding-bottom: 8px;
+}
+
+/* Main panel with list and calendar */
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Section headers */
+.main-panel h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #A6ACB8;
+  user-select: none;
+}
+
+/* Job header with toggle */
+.jobs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.toggle-calendar-btn {
+  background: #4A90E2;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(74,144,226,0.5);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.toggle-calendar-btn:hover {
+  background: #357ABD;
+}
+
+/* List and calendar wrappers */
+.list-wrapper,
+.calendar-wrapper {
+  background: #2E3A54;
+  border-radius: 14px;
+  padding: 20px 28px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  max-height: 500px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4A90E2 transparent;
+}
+
+.list-wrapper::-webkit-scrollbar,
+.calendar-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-wrapper::-webkit-scrollbar-thumb,
+.calendar-wrapper::-webkit-scrollbar-thumb {
+  background-color: #4A90E2;
+  border-radius: 8px;
+}
+
+/* Form elements inside side-panel */
+.side-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.side-panel label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #a0b0cc;
+  margin-bottom: 6px;
+  user-select: none;
+}
+
+.side-panel input,
+.side-panel select,
+.side-panel textarea,
+.side-panel button {
+  width: 100%;            /* Full width for alignment */
+  background: #1C2B44;
+  border: 1.5px solid #4A90E2;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #E1E3E6;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Ensure padding doesn't break width */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.side-panel input:focus,
+.side-panel select:focus,
+.side-panel textarea:focus {
+  border-color: #7FB5FF;
+  box-shadow: 0 0 10px rgba(74,144,226,0.6);
+}
+
+.side-panel button {
+  background-color: #4A90E2;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  padding: 14px 16px;
+  user-select: none;
+}
+
+.side-panel button:hover {
+  background-color: #357ABD;
+}
+
+/* Ensure dropdown arrows are visible and consistent */
+.side-panel select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3csvg width='10' height='7' viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%23E1E3E6' d='M0 0l5 7 5-7z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 10px 7px;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .nav-link {
+    flex-shrink: 0;
+    margin: 0 10px;
+    padding: 10px 14px;
+  }
+  .main {
+    padding: 24px 20px;
+  }
+  .cards-row {
+    justify-content: center;
+  }
+  .bottom-row {
+    flex-direction: column;
+  }
+  .actions, .notifications {
+    flex: 1 1 100%;
+  }
+  .page-content {
+    flex-direction: column;
+  }
+  .side-panel {
+    flex: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .main-panel {
+    width: 100%;
+  }
+}
+
+/* ----------------------------------------- */
+/*  Added alignment & layout fixes - minimal */
+/* ----------------------------------------- */
+
+/* Wrap KPICards and Charts side by side with spacing */
+.dashboard-container main > .kpi-cards,
+.dashboard-container main > .charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Make KPICards a flex container with wrapping */
+.kpi-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 600px; /* max width so charts can stay side by side */
+}
+
+/* Fix individual KPI card width */
+.kpi-cards .card {
+  flex: 1 1 280px; /* cards take 280px minimum width and wrap */
+  max-width: 280px;
+}
+
+/* Charts container */
+.charts-wrapper {
+  padding: 24px 16px;
+  margin-top: 24px;
+  background-color: #102A44; /* same as your card background */
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Bottom row layout fix */
+.bottom-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Actions and Notifications side by side */
+.actions, .notifications {
+  flex: 1 1 48%;
+  min-width: 280px;
+}
+
+/* Ensure action buttons and notifications have consistent height */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+/* Prevent overlap on smaller screens */
+@media (max-width: 960px) {
+  .kpi-cards, .charts {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .bottom-row {
+    flex-direction: column;
+  }
+  .actions, .notifications {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+/* Ships list card wrapper */
+.ships-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Individual ship card */
+.ship-card {
+  background: #2E3A54;
+  padding: 20px 24px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.ship-card:hover {
+  background: #384865;
+  transform: translateY(-2px);
+}
+
+.ship-info {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f0f4f8;
+}
+
+.manage-link {
+  background-color: #4A90E2;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.manage-link:hover {
+  background-color: #357ABD;
+}
+.ship-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ship-item {
+  background: #2e3a54;
+  padding: 16px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.ship-details {
+  font-size: 16px;
+  color: #e1e3e6;
+}
+
+.ship-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+/* Manage Button Theme */
+.manage-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+}
+
+.manage-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Delete Button Theme */
+.delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+.component-list-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.component-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.component-item {
+  background-color: #2e3a54;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  color: #e1e3e6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.component-details {
+  flex: 1;
+  min-width: 200px;
+  margin-right: 16px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 13px;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+.job-list-card {
+  background-color: #1f2937; /* dark slate */
+  color: #e0e7ff; /* light text */
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.job-list-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  color: #60a5fa; /* accent blue */
+}
+
+/* Filters container: horizontal flex with gaps */
+.filter-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  background-color: #374151;
+  border: none;
+  color: #e0e7ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 160px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-select:hover,
+.filter-select:focus {
+  background-color: #4b5563;
+  outline: none;
+}
+
+/* Job list container */
+.job-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Each job list item: flex container with space between */
+.job-list-item {
+  background-color: #111827;
+  padding: 16px 24px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #cbd5e1;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+/* Job info left aligned */
+.job-info {
+  flex-grow: 1;
+  font-size: 15px;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* Priority badge with colors */
+.priority {
+  font-weight: 600;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+}
+
+.priority.high {
+  background-color: #ef4444; /* red */
+}
+
+.priority.medium {
+  background-color: #facc15; /* yellow */
+  color: #111;
+}
+
+.priority.low {
+  background-color: #10b981; /* green */
+}
+
+/* Status select container */
+.status-container {
+  min-width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 8px;
+  color: #9ca3af;
+}
+
+.status-select {
+  padding: 6px 12px;
+  background-color: #374151;
+  border: none;
+  color: #e0e7ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  min-width: 140px;
+}
+
+.status-select:hover,
+.status-select:focus {
+  background-color: #4b5563;
+  outline: none;
+}
+
+/* Responsive: stack items vertically on small screens */
+@media (max-width: 600px) {
+  .job-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-container {
+    margin-top: 10px;
+    min-width: auto;
+  }
+}
