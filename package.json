@@ -6,11 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
-  "homepage": "https://Aayush220803.github.io/ship-maintenance-dashboard",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,10 +17,7 @@
     "recharts": "^2.15.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "gh-pages": "^6.0.0",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.7"
+    "gh-pages": "^6.0.0"
   },
   "browserslist": {
     "production": [
